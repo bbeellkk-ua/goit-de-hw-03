@@ -1,0 +1,15 @@
+services:
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goit-de-hw-03-spark
+    working_dir: /workspace
+    environment:
+      SPARK_LOCAL_IP: 127.0.0.1
+    ports:
+      - "4040:4040"
+    volumes:
+      - ./:/workspace
+    init: true
+    restart: unless-stopped
